@@ -31,11 +31,11 @@ class FS:
             key = {"devid": dev.devid, "devpath": di.path.replace("\x00", "")}
             stats["dev_bytes_used"].append((key, di.bytes_used))
             stats["dev_bytes_total"].append((key, di.total_bytes))
-            stats["dev_corruption_errors"].append((key, s.corruption_errs))
-            stats["dev_flush_errors"].append((key, s.flush_errs))
-            stats["dev_generation_errors"].append((key, s.generation_errs))
-            stats["dev_read_errors"].append((key, s.read_errs))
-            stats["dev_write_errors"].append((key, s.write_errs))
+            stats["dev_corruption_errs"].append((key, s.corruption_errs))
+            stats["dev_flush_errs"].append((key, s.flush_errs))
+            stats["dev_generation_errs"].append((key, s.generation_errs))
+            stats["dev_read_errs"].append((key, s.read_errs))
+            stats["dev_write_errs"].append((key, s.write_errs))
 
         for si in self.btrfs.space_info():
             key = {
