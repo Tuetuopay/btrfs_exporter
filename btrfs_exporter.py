@@ -35,7 +35,7 @@ class FS:
             stats["dev_flush_errors"].append((key, s.flush_errors))
             stats["dev_generation_errors"].append((key, s.generation_errors))
             stats["dev_read_errors"].append((key, s.read_errors))
-            stats["dev_write_errors"].append((key, s.write_errors)
+            stats["dev_write_errors"].append((key, s.write_errors))
 
         for si in self.btrfs.space_info():
             key = {
