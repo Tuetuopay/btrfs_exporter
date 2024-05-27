@@ -18,9 +18,9 @@ class FS:
     def get_stats(self):
         stats = {
             "dev_bytes_total": [],    "dev_bytes_used": [],
-            "dev_corruption_errors": [], "dev_flush_errors": [],
-            "dev_generation_errors": [], "dev_read_errors": [],
-            "dev_write_errors": [],
+            "dev_corruption_errs": [], "dev_flush_errs": [],
+            "dev_generation_errs": [], "dev_read_errs": [],
+            "dev_write_errs": [],
             "fs_bytes_total": [],     "fs_bytes_used": [],
             "fs_bytes_raw_total": [], "fs_bytes_raw_used": []
         }
@@ -31,11 +31,11 @@ class FS:
             key = {"devid": dev.devid, "devpath": di.path.replace("\x00", "")}
             stats["dev_bytes_used"].append((key, di.bytes_used))
             stats["dev_bytes_total"].append((key, di.total_bytes))
-            stats["dev_corruption_errors"].append((key, s.corruption_errors))
-            stats["dev_flush_errors"].append((key, s.flush_errors))
-            stats["dev_generation_errors"].append((key, s.generation_errors))
-            stats["dev_read_errors"].append((key, s.read_errors))
-            stats["dev_write_errors"].append((key, s.write_errors))
+            stats["dev_corruption_errors"].append((key, s.corruption_errs))
+            stats["dev_flush_errors"].append((key, s.flush_errs))
+            stats["dev_generation_errors"].append((key, s.generation_errs))
+            stats["dev_read_errors"].append((key, s.read_errs))
+            stats["dev_write_errors"].append((key, s.write_errs))
 
         for si in self.btrfs.space_info():
             key = {
