@@ -19,7 +19,6 @@ class FS:
         stats = {
             "dev_bytes_total": [],    "dev_bytes_used": [],
             "fs_bytes_total": [],     "fs_bytes_used": [],
-            "fs_bytes_str_total": [], "fs_bytes_str_used": []
         }
 
         for dev in self.btrfs.devices():
@@ -35,8 +34,6 @@ class FS:
             }
             stats["fs_bytes_total"].append((key, si.total_bytes))
             stats["fs_bytes_used"].append((key, si.used_bytes))
-            stats["fs_bytes_str_total"].append((key, si.total_bytes_str))
-            stats["fs_bytes_str_used"].append((key, si.used_bytes_str))
 
         return stats
 
